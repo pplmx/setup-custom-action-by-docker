@@ -1,0 +1,19 @@
+name: CI # Continuous Integration
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+    workflow_dispatch:
+
+jobs:
+    setup-my-action:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v4
+
+            -   name: Set My Action
+                uses: ./
+                with:
+                    my_input: 'GitHub'

@@ -1,0 +1,11 @@
+service:
+    setup_my_action:
+        build: .
+        image: setup-my-action
+
+networks:
+    setup_my_action-net:
+        name: setup_my_action-net
+        ipam:
+            config:
+                -   subnet: 172.16.238.0/24

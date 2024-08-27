@@ -1,0 +1,13 @@
+name: 'Setup My Action'
+description: 'A GitHub Action built using Go'
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+inputs:
+    my_input:
+        description: 'An input for the Go program'
+        required: true
+        default: 'World'
+outputs:
+    my_output:
+        description: 'Output of the Go program'
