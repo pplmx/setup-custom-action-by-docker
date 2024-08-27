@@ -13,14 +13,20 @@ jobs:
         steps:
             -   uses: actions/checkout@v4
 
+            -   name: Create input file
+                run: echo "This is the original file content." > input.txt
+
             -   name: Run Comprehensive Action
                 id: my_action
                 uses: ./
 
-            -   name: Check Outputs
+            -   name: Display outputs
                 run: |
                     echo "processed_text: ${{ steps.my_action.outputs.processed_text }}"
                     echo "word_count: ${{ steps.my_action.outputs.word_count }}"
                     echo "sum: ${{ steps.my_action.outputs.sum }}"
                     echo "average: ${{ steps.my_action.outputs.average }}"
                     echo "response_field: ${{ steps.my_action.outputs.response_field }}"
+
+            -   name: Display modified file content
+                run: cat output.txt

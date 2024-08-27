@@ -125,8 +125,24 @@ func callAPIAndExtractField(ctx context.Context, apiURL string) (string, error) 
 	return dataField, nil
 }
 
-func setOutput(name, value string) {
-	fmt.Printf("::set-output name=%s::%s\n", name, value)
+func setOutput(name, value string) error {
+	envFile := os.Getenv("GITHUB_OUTPUT")
+	f, err := os.OpenFile(envFile, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0644)
+	if err != nil {
+		return fmt.Errorf("failed to open GITHUB_OUTPUT file: %w", err)
+	}
+	defer func(f *os.File) {
+		err := f.Close()
+		if err != nil {
+			log.Printf("Failed to close GITHUB_OUTPUT file: %v", err)
+		}
+	}(f)
+
+	_, err = fmt.Fprintf(f, "%s=%s\n", name, value)
+	if err != nil {
+		return fmt.Errorf("failed to write to GITHUB_OUTPUT file: %w", err)
+	}
+	return nil
 }
 
 func main() {
@@ -138,13 +154,21 @@ func main() {
 
 	// 1. 文本处理
 	processedText, wordCount := processText(config.InputText, config.FindWord, config.ReplaceWord)
-	setOutput("processed_text", processedText)
-	setOutput("word_count", strconv.Itoa(wordCount))
+	if err := setOutput("processed_text", processedText); err != nil {
+		log.Fatalf("Failed to set output: %v", err)
+	}
+	if err := setOutput("word_count", strconv.Itoa(wordCount)); err != nil {
+		log.Fatalf("Failed to set output: %v", err)
+	}
 
 	// 2. 列表处理
 	sum, average := calculateSumAndAverage(config.NumberList)
-	setOutput("sum", strconv.FormatFloat(sum, 'f', -1, 64))
-	setOutput("average", strconv.FormatFloat(average, 'f', -1, 64))
+	if err := setOutput("sum", strconv.FormatFloat(sum, 'f', -1, 64)); err != nil {
+		log.Fatalf("Failed to set output: %v", err)
+	}
+	if err := setOutput("average", strconv.FormatFloat(average, 'f', -1, 64)); err != nil {
+		log.Fatalf("Failed to set output: %v", err)
+	}
 
 	// 3. 文件处理
 	if err := readAndAppendToFile(config.InputFile, config.OutputFile, config.AppendText); err != nil {
@@ -159,5 +183,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("API request error: %v", err)
 	}
-	setOutput("response_field", responseField)
+	if err := setOutput("response_field", responseField); err != nil {
+		log.Fatalf("Failed to set output: %v", err)
+	}
 }
