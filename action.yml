@@ -1,13 +1,27 @@
-name: 'Setup My Action'
-description: 'A GitHub Action built using Go'
+name: 'Comprehensive GitHub Action by Golang with TOML Config'
+description: 'A GitHub Action that handles text, lists, files, and API requests using Go, configured via TOML'
+author: 'Mystic'
+branding:
+    icon: 'check-square'  # Choose an icon
+    color: 'blue'  # Choose a color
 runs:
     using: 'docker'
     image: 'Dockerfile'
+
 inputs:
-    my_input:
-        description: 'An input for the Go program'
-        required: true
-        default: 'World'
+    config_path:
+        description: 'Path to the TOML configuration file'
+        required: false
+        default: '.github/configs/setup-my-action.toml'
+
 outputs:
-    my_output:
-        description: 'Output of the Go program'
+    processed_text:
+        description: 'The processed text after find and replace'
+    word_count:
+        description: 'The total number of words in the text'
+    sum:
+        description: 'The sum of the numbers'
+    average:
+        description: 'The average of the numbers'
+    response_field:
+        description: 'A specific field from the API response'
