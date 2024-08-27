@@ -16,4 +16,10 @@ COPY . .
 
 RUN go build -trimpath -ldflags="-w -s" -o /setup-my-action
 
+FROM gcr.io/distroless/static:nonroot
+
+COPY --from=builder /setup-my-action /setup-my-action
+
+USER nonroot:nonroot
+
 ENTRYPOINT ["/setup-my-action"]
