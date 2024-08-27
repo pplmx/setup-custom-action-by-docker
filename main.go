@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"io"
 	"log"
@@ -89,16 +88,17 @@ func readAndAppendToFile(inputFile, outputFile, appendText string) error {
 	return os.WriteFile(outputFile, []byte(modifiedContent), 0644)
 }
 
-func callAPIAndExtractField(ctx context.Context, apiURL string) (string, error) {
+func checkAPIReachability(ctx context.Context, apiURL string) error {
+	// 创建带有上下文的 HTTP GET 请求
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, apiURL, nil)
 	if err != nil {
-		return "", fmt.Errorf("failed to create request: %w", err)
+		return fmt.Errorf("failed to create request: %w", err)
 	}
 
 	client := &http.Client{Timeout: httpTimeout}
 	resp, err := client.Do(req)
 	if err != nil {
-		return "", fmt.Errorf("failed to make API request: %w", err)
+		return fmt.Errorf("failed to make API request: %w", err)
 	}
 	defer func(Body io.ReadCloser) {
 		err := Body.Close()
@@ -107,22 +107,12 @@ func callAPIAndExtractField(ctx context.Context, apiURL string) (string, error) 
 		}
 	}(resp.Body)
 
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return "", fmt.Errorf("failed to read API response: %w", err)
+	// 检查响应状态码是否在 200-299 范围内
+	if resp.StatusCode < http.StatusOK || resp.StatusCode >= http.StatusMultipleChoices {
+		return fmt.Errorf("API is not reachable, status code: %d", resp.StatusCode)
 	}
 
-	var result map[string]interface{}
-	if err := json.Unmarshal(body, &result); err != nil {
-		return "", fmt.Errorf("failed to parse JSON response: %w", err)
-	}
-
-	dataField, ok := result["data"].(string)
-	if !ok {
-		return "", fmt.Errorf("field 'data' not found in API response or is not a string")
-	}
-
-	return dataField, nil
+	return nil
 }
 
 func setOutput(name, value string) error {
@@ -179,11 +169,11 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), contextTimeout)
 	defer cancel()
 
-	responseField, err := callAPIAndExtractField(ctx, config.ApiURL)
+	err = checkAPIReachability(ctx, config.ApiURL)
 	if err != nil {
 		log.Fatalf("API request error: %v", err)
 	}
-	if err := setOutput("response_field", responseField); err != nil {
+	if err := setOutput("response_field", "API Reachable"); err != nil {
 		log.Fatalf("Failed to set output: %v", err)
 	}
 }

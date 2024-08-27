@@ -5,4 +5,4 @@ number_list = [1.0, 2.0, 3.0, 4.0, 5.0]
 input_file = "input.txt"
 output_file = "output.txt"
 append_text = "This text will be appended."
-api_url = "https://api.example.com/data"
+api_url = "https://example.org"
