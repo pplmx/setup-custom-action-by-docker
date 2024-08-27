@@ -1,4 +1,4 @@
-name: 'Comprehensive GitHub Action by Golang with TOML Config'
+name: 'Example GitHub Action Using Golang'
 description: 'A GitHub Action that handles text, lists, files, and API requests using Go, configured via TOML'
 author: 'Mystic'
 branding:
