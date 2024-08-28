@@ -2,15 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.0](https://github.com/pplmx/setup-custom-action-by-docker/compare/v0.1.1..v0.2.0) - 2024-08-28
+
+### 🐛 Bug Fixes
+
+- Failed to find the config file - ([1da1a87](https://github.com/pplmx/setup-custom-action-by-docker/commit/1da1a875f9535bebf7f2be3433bf1c1fec2c3dd6))
+
+### 📚 Documentation
+
+- Update the README - ([fe720b2](https://github.com/pplmx/setup-custom-action-by-docker/commit/fe720b2bbe938913efcade212ac5eaba65376a61))
+
+### 🎨 Styling
+
+- Rename the repo - ([413574f](https://github.com/pplmx/setup-custom-action-by-docker/commit/413574fe6d4984ddab365de8dc38631c0000d577))
+
+### ⚙️ Miscellaneous Tasks
+
+- Fix the typos - ([55346ca](https://github.com/pplmx/setup-custom-action-by-docker/commit/55346ca81bc0e76c20883ea05b5731ea6e9f1c0d))
+- Rename github action job name - ([b277664](https://github.com/pplmx/setup-custom-action-by-docker/commit/b2776642b1cec7c581ba7cf0cb962475eb55534b))
+
+
 ## [0.1.1](https://github.com/pplmx/setup-custom-action-by-docker/compare/v0.1.0..v0.1.1) - 2024-08-27
 
 ### 📚 Documentation
 
 - Update the usage - ([ea33c71](https://github.com/pplmx/setup-custom-action-by-docker/commit/ea33c71f768504c2ea3c83b067cd1e7a6b59b9c6))
 
-## New Contributors ❤️
-
-* @github-actions[bot] made their first contribution
 
 ## [0.1.0] - 2024-08-27
 
