@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.1](https://github.com/pplmx/setup-custom-action-by-docker/compare/v0.2.0..v0.2.1) - 2024-08-28
+
+### 📚 Documentation
+
+- Some minor changes - ([ebbbb88](https://github.com/pplmx/setup-custom-action-by-docker/commit/ebbbb8827c8c7ebc8c79e0c274e129e56a76f09a))
+
+
 ## [0.2.0](https://github.com/pplmx/setup-custom-action-by-docker/compare/v0.1.1..v0.2.0) - 2024-08-28
 
 ### 🐛 Bug Fixes
