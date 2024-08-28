@@ -17,8 +17,8 @@ API requests efficiently using Go. The action is configured using a TOML file an
 
 ## Inputs
 
-| Name          | Description                         | Required | Default                                |
-|---------------|-------------------------------------|----------|----------------------------------------|
+| Name          | Description                         | Required | Default                                              |
+|---------------|-------------------------------------|----------|------------------------------------------------------|
 | `config_path` | Path to the TOML configuration file | No       | `.github/configs/setup-custom-action-by-docker.toml` |
 
 ## Outputs
@@ -46,24 +46,27 @@ jobs:
             -   uses: actions/checkout@v4
 
             -   name: Run Example GitHub Action Using Golang
-                uses: pplmx/setup-custom-action-by-docker@v1
+                uses: pplmx/setup-custom-action-by-docker@main
 ```
 
 You can also follow [this](.github/workflows/test_custom_action_itself.yml).
 
 ## Local Development
 
-For instructions on setting up a local development environment and testing this GitHub Action, please refer to the [Development Documentation](docs/development.md).
+For instructions on setting up a local development environment and testing this GitHub Action, please refer to
+the [Development Documentation](docs/development.md).
 
 ## License
 
 This project is dual-licensed under either of the following licenses, at your option:
 
-- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0))
+- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE)
+  or [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0))
 - MIT license ([LICENSE-MIT](LICENSE-MIT) or [http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT))
 
 ## Contribution
 
-Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as
+defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
 
 For more details, see [CONTRIBUTING.md](CONTRIBUTING.md).
