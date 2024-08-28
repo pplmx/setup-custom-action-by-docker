@@ -1,11 +1,11 @@
-# Example GitHub Action Using Golang
+# Example for GitHub Action Using Go
 
 [![CI](https://github.com/pplmx/setup-custom-action-by-docker/workflows/CI/badge.svg)](https://github.com/pplmx/setup-custom-action-by-docker/actions)
 [![Coverage Status](https://coveralls.io/repos/github/pplmx/setup-custom-action-by-docker/badge.svg?branch=main)](https://coveralls.io/github/pplmx/setup-custom-action-by-docker?branch=main)
 
 ## Overview
 
-**Example GitHub Action Using Golang** is a custom GitHub Action designed to handle text processing, lists, files, and
+**Example for GitHub Action Using Go** is a custom GitHub Action designed to handle text processing, lists, files, and
 API requests efficiently using Go. The action is configured using a TOML file and runs inside a Docker container.
 
 ## Features
@@ -45,7 +45,7 @@ jobs:
         steps:
             -   uses: actions/checkout@v4
 
-            -   name: Run Example GitHub Action Using Golang
+            -   name: Run Example for GitHub Action Using Go
                 uses: pplmx/setup-custom-action-by-docker@main
 ```
 
