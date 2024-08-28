@@ -1,4 +1,4 @@
-name: Setup My Action Release
+name: Setup Custom Action Release
 
 on:
     push:
