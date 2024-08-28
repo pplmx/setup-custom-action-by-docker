@@ -49,7 +49,7 @@ jobs:
                 uses: pplmx/setup-custom-action-by-docker@v1
 ```
 
-You can also follow [this](.github/workflows/ci.yml).
+You can also follow [this](.github/workflows/test_custom_action_itself.yml).
 
 ## Local Development
 
