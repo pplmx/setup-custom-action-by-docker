@@ -1,7 +1,7 @@
 # Example GitHub Action Using Golang
 
-[![CI](https://github.com/pplmx/setup-my-action/workflows/CI/badge.svg)](https://github.com/pplmx/setup-my-action/actions)
-[![Coverage Status](https://coveralls.io/repos/github/pplmx/setup-my-action/badge.svg?branch=main)](https://coveralls.io/github/pplmx/setup-my-action?branch=main)
+[![CI](https://github.com/pplmx/setup-custom-action-by-docker/workflows/CI/badge.svg)](https://github.com/pplmx/setup-custom-action-by-docker/actions)
+[![Coverage Status](https://coveralls.io/repos/github/pplmx/setup-custom-action-by-docker/badge.svg?branch=main)](https://coveralls.io/github/pplmx/setup-custom-action-by-docker?branch=main)
 
 ## Overview
 
@@ -19,7 +19,7 @@ API requests efficiently using Go. The action is configured using a TOML file an
 
 | Name          | Description                         | Required | Default                                |
 |---------------|-------------------------------------|----------|----------------------------------------|
-| `config_path` | Path to the TOML configuration file | No       | `.github/configs/setup-my-action.toml` |
+| `config_path` | Path to the TOML configuration file | No       | `.github/configs/setup-custom-action-by-docker.toml` |
 
 ## Outputs
 
@@ -46,7 +46,7 @@ jobs:
             -   uses: actions/checkout@v4
 
             -   name: Run Example GitHub Action Using Golang
-                uses: pplmx/setup-my-action@v1
+                uses: pplmx/setup-custom-action-by-docker@v1
 ```
 
 You can also follow [this](.github/workflows/ci.yml).

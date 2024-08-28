@@ -19,7 +19,7 @@ type Config struct {
 	ApiURL      string    `toml:"api_url"`
 }
 
-const defaultConfigPath = ".github/configs/setup-my-action.toml"
+const defaultConfigPath = ".github/configs/setup-custom-action-by-docker.toml"
 
 func LoadConfig(path string) (*Config, error) {
 	if path == "" {

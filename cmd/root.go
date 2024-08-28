@@ -7,11 +7,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/pplmx/setup-my-action/internal/api"
-	"github.com/pplmx/setup-my-action/internal/config"
-	"github.com/pplmx/setup-my-action/internal/file"
-	"github.com/pplmx/setup-my-action/internal/output"
-	"github.com/pplmx/setup-my-action/internal/text"
+	"github.com/pplmx/setup-custom-action-by-docker/internal/api"
+	"github.com/pplmx/setup-custom-action-by-docker/internal/config"
+	"github.com/pplmx/setup-custom-action-by-docker/internal/file"
+	"github.com/pplmx/setup-custom-action-by-docker/internal/output"
+	"github.com/pplmx/setup-custom-action-by-docker/internal/text"
 )
 
 const contextTimeout = 15 * time.Second

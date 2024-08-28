@@ -1,11 +1,11 @@
 service:
-    setup_my_action:
+    setup_custom_action_by_docker:
         build: .
-        image: setup-my-action
+        image: setup-custom-action-by-docker
 
 networks:
-    setup_my_action-net:
-        name: setup_my_action-net
+    setup_custom_action_by_docker-net:
+        name: setup_custom_action_by_docker-net
         ipam:
             config:
                 -   subnet: 172.16.238.0/24

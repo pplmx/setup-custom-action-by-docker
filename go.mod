@@ -1,4 +1,4 @@
-module github.com/pplmx/setup-my-action
+module github.com/pplmx/setup-custom-action-by-docker
 
 go 1.23
 

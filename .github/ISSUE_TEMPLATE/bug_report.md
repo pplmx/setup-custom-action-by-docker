@@ -37,7 +37,7 @@ Steps to reproduce the behavior:
 <!-- Please fill the following information. -->
 
 - OS: [e.g. Ubuntu 20.04]
-- setup-my-action version: [e.g. 0.1.0]
+- setup-custom-action-by-docker version: [e.g. 0.1.0]
 
 ## Additional context
 

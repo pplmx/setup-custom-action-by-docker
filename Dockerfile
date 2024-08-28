@@ -14,10 +14,10 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -trimpath -ldflags="-w -s" -o /setup-my-action
+RUN go build -trimpath -ldflags="-w -s" -o /setup-custom-action-by-docker
 
 FROM gcr.io/distroless/static
 
-COPY --from=builder /setup-my-action /setup-my-action
+COPY --from=builder /setup-custom-action-by-docker /setup-custom-action-by-docker
 
-ENTRYPOINT ["/setup-my-action"]
+ENTRYPOINT ["/setup-custom-action-by-docker"]

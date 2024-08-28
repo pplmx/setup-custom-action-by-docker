@@ -1,7 +1,7 @@
 .PHONY: help init image run build test
 .DEFAULT_GOAL := help
 
-APP_NAME := setup-my-action
+APP_NAME := setup-custom-action-by-docker
 APP_PATH=.
 
 # init

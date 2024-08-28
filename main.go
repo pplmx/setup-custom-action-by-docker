@@ -1,6 +1,6 @@
 package main
 
-import "github.com/pplmx/setup-my-action/cmd"
+import "github.com/pplmx/setup-custom-action-by-docker/cmd"
 
 func main() {
 	cmd.Execute()

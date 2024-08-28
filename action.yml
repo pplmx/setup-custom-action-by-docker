@@ -12,7 +12,7 @@ inputs:
     config_path:
         description: 'Path to the TOML configuration file'
         required: false
-        default: '.github/configs/setup-my-action.toml'
+        default: '.github/configs/setup-custom-action-by-docker.toml'
 
 outputs:
     processed_text:

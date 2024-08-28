@@ -9,7 +9,7 @@ its purpose.
 ## Directory Structure
 
 ```
-setup-my-action/
+setup-custom-action-by-docker/
 │
 ├── main.go                 // Entry point of the application
 ├── cmd/

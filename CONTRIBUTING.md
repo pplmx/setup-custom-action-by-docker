@@ -1,6 +1,6 @@
 # Contribution guidelines
 
-First off, thank you for considering contributing to `setup-my-action`.
+First off, thank you for considering contributing to `setup-custom-action-by-docker`.
 
 If your contribution is not straightforward, please first discuss the change you
 wish to make by creating a new issue before making the change.
@@ -8,7 +8,7 @@ wish to make by creating a new issue before making the change.
 ## Reporting issues
 
 Before reporting an issue on the
-[issue tracker](https://github.com/pplmx/setup-my-action/issues),
+[issue tracker](https://github.com/pplmx/setup-custom-action-by-docker/issues),
 please check that it has not already been reported by searching for some related
 keywords.
 
@@ -42,8 +42,8 @@ If the required subsection does not exist yet under **Unreleased**, create it!
 This is no different from other Go projects.
 
 ```shell
-git clone https://github.com/pplmx/setup-my-action
-cd setup-my-action
+git clone https://github.com/pplmx/setup-custom-action-by-docker
+cd setup-custom-action-by-docker
 make test
 ```
 
